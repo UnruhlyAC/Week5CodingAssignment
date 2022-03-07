@@ -113,7 +113,7 @@ showVendorMenuOptions(vendorInfo){
           this.deleteCourseTitle();
           break;
         case '3':
-          this.viewCourseTitle();
+          this.displayCourseTitle();
         default:
           selection = 0
 
@@ -135,10 +135,19 @@ deleteVendor(){
   }
 
   deleteCourseTitle(){
-    let index = prompt('Enter the index of the course you wish to delete');
+    let index = prompt('Enter the index of the course you wish to delete:');
     if (index > -1 && index < this.selectedVendor.courses.length){
       this.selectedVendor.courses.splice(index, 1);
     }
+  }
+
+  displayCourseTitle(){
+    let coursesString = '';
+    for (let i = 0; i < this.courses.length; i++){
+      coursesString += i + ')' + this.courses[i].name + '\n';
+    }
+    alert(vendorsString);
+  }
   }
 }
 let menu = new Menu();
