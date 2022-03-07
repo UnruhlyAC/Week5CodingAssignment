@@ -38,44 +38,46 @@ class Menu {
     let selection = this.showMainMenuOptions();
     while (selection !=0){
       switch (selection){
-        case '1';
+        case '1':
         this.createVendor();
         break;
-        case '2';
+        case '2':
         this.viewVendor();
         break;
-        case '3';
+        case '3':
         this.deleteVendor();
         break;
-        case '4';
+        case '4':
         this.displayVendor();
         break;
-        default;
+        default:
           selection = 0;
       }
       selection = this.showMainMenuOptions();
     }
+
     alert('Goodbye!');
   }
 
   showMainMenuOptions(){
-    return prompt("
+    return prompt(`
     0)exit
     1)create new vendor
     2)view vendor
     3)delete vendor
     4)display all vendors
-    ");
+    `);
   }
 
-showVendorMenuOptions(teamInfo){
-  return prompt('
+showVendorMenuOptions(vendorInfo){
+  return prompt(`
   0) back
   1) create course type
   2) delete course type
+  3) view course types
   --------------------
-  ${vendorsInfo}
-  ');
+  ${vendorInfo}
+  `);
 }
 
   displayVendor(){
@@ -110,7 +112,10 @@ showVendorMenuOptions(teamInfo){
         case '2':
           this.deleteCourseTitle();
           break;
+        case '3':
+          this.viewCourseTitle();
         default:
+          selection = 0
 
       }
     }
